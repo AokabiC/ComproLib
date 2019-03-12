@@ -1,14 +1,11 @@
-struct UnionFind
-{
-    vector< int > data;
+struct UnionFind{
+    vector<int> data;
 
-    UnionFind(int sz)
-    {
+    UnionFind(int sz){
         data.assign(sz, -1);
     }
 
-    bool unite(int x, int y)
-    {
+    bool unite(int x, int y){
         x = find(x), y = find(y);
         if(x == y) return(false);
         if(data[x] > data[y]) swap(x, y);
@@ -17,15 +14,12 @@ struct UnionFind
         return(true);
     }
 
-    int find(int k)
-    {
+    int find(int k){
         if(data[k] < 0) return(k);
         return(data[k] = find(data[k]));
     }
 
-    int size(int k)
-    {
+    int size(int k){
         return(-data[find(k)]);
     }
 };
-

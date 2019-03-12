@@ -1,0 +1,189 @@
+{
+    // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+    // Placeholders with the same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"scope": "javascript,typescript",
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "graph": {
+        "prefix": "graph",
+        "body": [
+            "struct edge{",
+            "    int src, to, cost;",
+            "};",
+            "using Edges = vector<edge>;",
+            "using WeightedGraph = vector<Edges>;",
+            ""
+        ],
+        "description": "graph temp"
+    },
+    "dijkstra": {
+        "prefix": "dijkstra",
+        "body": [
+            "struct edge{",
+            "    int src, to, cost;",
+            "};",
+            "using Edges = vector<edge>;",
+            "using WeightedGraph = vector<Edges>;",
+            "",
+            "vector<int> dijkstra(WeightedGraph &G, int st){",
+            "    vector<int> dist(G.size(), INF);",
+            "    using pi = pair<int, int>;",
+            "    priority_queue<pi, vector<pi>, greater<pi>> q;",
+            "    dist[st] = 0;",
+            "    q.push(mp(dist[st], st));",
+            "    while(!q.empty()){",
+            "        int cost, idx;",
+            "        tie(cost, idx) = q.top(); q.pop();",
+            "        if(dist[idx] < cost) continue;",
+            "        for(auto &e: G[idx]){",
+            "            if(dist[e.to] <= cost+e.cost) continue;",
+            "            dist[e.to] = cost+e.cost;",
+            "            q.push(mp(dist[e.to], e.to));",
+            "        }",
+            "    }",
+            "    return dist;",
+            "}"
+        ],
+        "description": "dijkstra"
+    },
+    "bellman_ford": {
+        "prefix": "bellman_ford",
+        "body": [
+            "struct edge{",
+            "    int src, to, cost;",
+            "};",
+            "using Edges = vector<edge>;",
+            "",
+            "vector<int> bellman_ford(Edges &E, int V, int st){",
+            "    vector<int> dist(V, INF);",
+            "    dist[st] = 0;",
+            "    rep(i, V-1){",
+            "        for(auto &e: E){",
+            "            if(dist[e.src] == INF) continue;",
+            "            dist[e.to] = min(dist[e.to], dist[e.src]+e.cost);",
+            "        }",
+            "    }",
+            "    for(auto &e: E){",
+            "        if(dist[e.src] == INF) continue;",
+            "        if(dist[e.to] > dist[e.src]+e.cost){",
+            "            // 負閉路が存在",
+            "            return vector<int>();",
+            "        }",
+            "    }",
+            "    return dist;",
+            "}"
+        ],
+        "description": "bellman_ford"
+    },
+    "Warshall_floyd": {
+        "prefix": "warshall_floyd",
+        "body": [
+            "void warshall_floyd(vector<vector<int>> &G){",
+            "    int V = G.size();",
+            "    rep(k, V)rep(i, V)rep(j, V){",
+            "        if(G[i][k] == INF || G[k][j] == INF) continue;",
+            "        G[i][j] = min(G[i][j], G[i][k]+G[k][j]);",
+            "    }",
+            "    // G[i][i] < 0が存在 <=> 負閉路が存在",
+            "}"
+        ],
+        "description": "warshall_floyd"
+    },
+    "kruskal": {
+        "prefix": "kruskal",
+        "body": [
+            "struct UnionFind{",
+            "    vector<int> data;",
+            "",
+            "    UnionFind(int sz){",
+            "        data.assign(sz, -1);",
+            "    }",
+            "",
+            "    bool unite(int x, int y){",
+            "        x = find(x), y = find(y);",
+            "        if(x == y) return(false);",
+            "        if(data[x] > data[y]) swap(x, y);",
+            "        data[x] += data[y];",
+            "        data[y] = x;",
+            "        return(true);",
+            "    }",
+            "",
+            "    int find(int k){",
+            "        if(data[k] < 0) return(k);",
+            "        return(data[k] = find(data[k]));",
+            "    }",
+            "",
+            "    int size(int k){",
+            "        return(-data[find(k)]);",
+            "    }",
+            "};",
+            "",
+            "struct edge{",
+            "    int src, to, cost;",
+            "};",
+            "using Edges = vector<edge>;",
+            "",
+            "int kruskal(Edges &E, int V)",
+            "{",
+            "    sort(all(E), [](const edge &a, const edge &b)",
+            "    {",
+            "        return (a.cost < b.cost);",
+            "    });",
+            "    UnionFind tree(V);",
+            "    int res = 0;",
+            "    for(auto &e : E) {",
+            "        if(tree.unite(e.src, e.to)) res += e.cost;",
+            "    }",
+            "    return (res);",
+            "}"
+        ],
+        "description": "kruskal"
+    },
+    "topological_sort": {
+        "prefix": "tsort",
+        "body": [
+            "",
+            "struct edge",
+            "{",
+            "  int src, to, cost;",
+            "};",
+            "using Edges = vector<edge>;",
+            "using WeightedGraph = vector<Edges>;",
+            "",
+            "vector<int> tsort(WeightedGraph &G){",
+            "    vector<int> tsorted;",
+            "    vector<int> used(G.size(), 0);",
+            "    bool f = false;",
+            "    function<void(int)> dfs = [&](int u){",
+            "        if(used[u] > 0){",
+            "            if(used[u] == 1) f = true;",
+            "            return;",
+            "        }",
+            "        used[u] = 1;",
+            "        for(auto &e : G[u]) dfs(e.to);",
+            "        used[u] = 2;",
+            "        tsorted.pb(u);",
+            "    };",
+            "    rep(i, G.size()) dfs(i);",
+            "    if(f){",
+            "        // 閉路が存在",
+            "        return vector<int>();",
+            "    }",
+            "    reverse(all(tsorted));",
+            "    return tsorted;",
+            "}"
+        ],
+        "description": "topological_sort"
+    }
+}
