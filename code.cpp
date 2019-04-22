@@ -8,8 +8,13 @@ using namespace std;
 using LL = long long;
 const int INF = 1e9;
 const LL LLINF = 1e16;
-const LL mod = 1e9 + 7;
+
+
 
 int main(){
-    
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    rep(i, n) cin >> a[i];
+
 }
