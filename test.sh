@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Compiling..."
-g++ -Wall -std=c++14 ./code.cpp
+g++ -Wall -g -D_GLIBCXX_DEBUG -fsanitize=undefined -std=c++14 ./code.cpp
 if [ -e ./a.out ]; then
     key="y"
     testcount=1;
