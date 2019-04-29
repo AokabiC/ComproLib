@@ -1,11 +1,188 @@
 #include <bits/stdc++.h>
-#define rep(i,n) for(int i=0;i<(n);i++)
-#define rep1(i,n) for(int i=1;i<(n);i++)
+#define rep(i,n) for(int i=0; i<(n);i++)
+#define rep1(i,n) for(int i=1; i<(n); i++)
+#define repe(i,n) for(auto &&i:n)
 #define all(v) (v).begin(),(v).end()
-#define pb(a) push_back(a)
+#define decimal fixed<<setprecision(20)
+#define fastcin() cin.tie(0);ios::sync_with_stdio(false)
 using namespace std;
-typedef long long LL;
+using LL = long long;
+const int INF = 1e9;
+const LL LLINF = 1e16;
 
 int main(){
+    fastcin();
 
 }
+
+
+Case #1: IMPOSSIBLE
+Case #2: IMPOSSIBLE
+Case #3: IMPOSSIBLE
+Case #4: POSSIBLE
+1 1
+2 4
+1 2
+2 5
+1 3
+2 1
+1 4
+2 2
+1 5
+2 3
+Case #5: IMPOSSIBLE
+Case #6: IMPOSSIBLE
+Case #7: POSSIBLE
+1 1
+2 3
+3 1
+1 2
+2 4
+3 2
+1 3
+2 1
+3 3
+1 4
+2 2
+3 4
+Case #8: POSSIBLE
+1 1
+2 3
+3 1
+1 2
+2 4
+3 2
+1 3
+2 5
+3 3
+1 4
+2 1
+3 4
+1 5
+2 2
+3 5
+Case #9: IMPOSSIBLE
+Case #10: POSSIBLE
+1 1
+3 2
+1 3
+2 1
+4 2
+2 3
+3 1
+1 2
+3 3
+4 1
+2 2
+4 3
+Case #11: POSSIBLE
+1 1
+2 3
+3 1
+4 3
+1 2
+2 4
+3 2
+4 4
+1 3
+2 1
+3 3
+4 1
+1 4
+2 2
+3 4
+4 2
+Case #12: POSSIBLE
+1 1
+2 3
+3 1
+4 3
+1 2
+2 4
+3 2
+4 4
+1 3
+2 5
+3 3
+4 5
+1 4
+2 1
+3 4
+4 1
+1 5
+2 2
+3 5
+4 2
+Case #13: POSSIBLE
+1 1
+4 2
+2 1
+5 2
+3 1
+1 2
+4 1
+2 2
+5 1
+3 2
+Case #14: POSSIBLE
+1 1
+3 2
+1 3
+2 1
+4 2
+2 3
+3 1
+5 2
+3 3
+4 1
+1 2
+4 3
+5 1
+2 2
+5 3
+Case #15: POSSIBLE
+1 1
+2 3
+3 1
+4 3
+5 1
+1 2
+2 4
+3 2
+4 4
+5 2
+1 3
+2 1
+3 3
+4 1
+5 3
+1 4
+2 2
+3 4
+4 2
+5 4
+Case #16: POSSIBLE
+1 1
+2 3
+3 1
+4 3
+5 1
+1 2
+2 4
+3 2
+4 4
+5 2
+1 3
+2 5
+3 3
+4 5
+5 3
+1 4
+2 1
+3 4
+4 1
+5 4
+1 5
+2 2
+3 5
+4 2
