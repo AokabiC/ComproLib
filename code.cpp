@@ -11,5 +11,4 @@ const int INF = 1e9;
 const LL LLINF = 1e16;
 
 int main(){
-
 }
