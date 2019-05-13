@@ -1,0 +1,46 @@
+2 2 2 8
+4 6
+1 5
+3 8
+
+
+#include <bits/stdc++.h>
+#define rep(i,n) for(int i=0; i<(n);i++)
+#define rep1(i,n) for(int i=1; i<(n); i++)
+#define repe(i,n) for(auto &&i:n)
+#define all(v) (v).begin(),(v).end()
+#define decimal fixed<<setprecision(20)
+#define fastcin() cin.tie(0);ios::sync_with_stdio(false)
+using namespace std;
+using LL = long long;
+const int INF = 1e9;
+const LL LLINF = 1e16;
+const int mod = 1e9+7;
+
+int main(){
+    int n;
+    cin >> n;
+    vector<pair<int, int>> p(n);
+    rep(i, n){
+        int x, y;
+        cin >> x >> y;
+        p[i] = make_pair(x, y);
+    }
+
+    multiset<double> st;
+    rep(i, n){
+        for(int j=i+1; j<n; j++){
+            double dx = p[i].first - p[j].first;
+            double dy = p[i].second - p[j].second;
+            if(dx == 0) st.insert(1e100);
+            else st.insert(dy / dx);
+        }
+    }
+    repe(j, st) cout << j << " "; cout << endl;
+    LL ans = 0;
+    repe(i, st) ans += st.size() - st.count(i);
+    cout << ans/2 << endl;
+
+
+
+}
