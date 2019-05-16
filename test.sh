@@ -36,7 +36,7 @@ run() {
 
 reset() {
     cat ./lib/macro > code.cpp
-    echo -e "\e[32m[OK]\e Reset completed."
+    echo -e "\e[32m[OK]\e[m Reset completed."
 }
 
 if [ $# = 0 ]; then
