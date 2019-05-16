@@ -34,18 +34,33 @@ run() {
     rm -f a.out
 }
 
+reset() {
+    cat ./lib/macro > code.cpp
+    echo -e "\e[32m[OK]\e Reset completed."
+}
+
 if [ $# = 0 ]; then
-    run
+    echo -e "\e[33m[USAGE]\e[m cptest [options]"
+    echo "    -n : Test normally"
+    echo "    -i : Test from input file"
+    echo "    -c : Copy to the clipboard"
+    echo "    -r : Reset macro"
 fi
 for OPT in "$@"
 do
     case "$OPT" in
+        '-n' )
+            run
+            ;;
         '-i' )
             FLAG_I=1
             run
             ;;
         '-c' )
             copy
+            ;;
+        '-r' )
+            reset
             ;;
     esac
 done
