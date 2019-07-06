@@ -1,3 +1,4 @@
+// 座標圧縮
 vector<int> unzip = a;
 map<int, int> zip;
 sort(all(unzip));

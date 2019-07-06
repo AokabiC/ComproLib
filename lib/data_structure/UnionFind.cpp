@@ -1,25 +1,25 @@
 struct UnionFind{
-    vector<int> data;
+    vector<int> dat;
 
     UnionFind(int sz){
-        data.assign(sz, -1);
+        dat.assign(sz, -1);
     }
 
     bool unite(int x, int y){
-        x = find(x), y = find(y);
+        x = root(x), y = root(y);
         if(x == y) return(false);
-        if(data[x] > data[y]) swap(x, y);
-        data[x] += data[y];
-        data[y] = x;
+        if(dat[x] > dat[y]) swap(x, y);
+        dat[x] += dat[y];
+        dat[y] = x;
         return(true);
     }
 
-    int find(int k){
-        if(data[k] < 0) return(k);
-        return(data[k] = find(data[k]));
+    int root(int k){
+        if(dat[k] < 0) return(k);
+        return(dat[k] = root(dat[k]));
     }
 
     int size(int k){
-        return(-data[find(k)]);
+        return(-dat[root(k)]);
     }
 };

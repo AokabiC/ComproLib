@@ -1,4 +1,4 @@
-// from うしさんのライブラリ
+// うしさんのライブラリを少し改造した
 template<int mod>
 struct ModInt {
     int x;
@@ -44,6 +44,15 @@ struct ModInt {
         return ModInt(u);
     }
 
+    ModInt pow(int e){
+        long long a = 1, p = x;
+        while(e > 0) {
+            if(e%2 == 0) {p = (p*p) % mod; e /= 2;}
+            else {a = (a*p) % mod; e--;}
+        }
+        return ModInt(a);
+    }
+
     friend ostream &operator<<(ostream &os, const ModInt<mod> &p) {
         return os << p.x;
     }
@@ -56,4 +65,4 @@ struct ModInt {
 };
 
 const int mod = 1e9 + 7;
-using modint = ModInt< mod >;
+using modint = ModInt<mod>;

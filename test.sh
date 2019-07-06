@@ -36,6 +36,7 @@ run() {
 
 reset() {
     cat ./lib/macro > code.cpp
+    : > input
     echo -e "\e[32m[OK]\e[m Reset completed."
 }
 
