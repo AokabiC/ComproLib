@@ -1,0 +1,49 @@
+{
+	// Place your compro workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+    // }
+
+    "compress": {
+    "prefix": "compress",
+    "body": [
+        "vector<$1> unzip = a;",
+        "map<int, $1> zip;",
+        "sort(all(unzip));",
+        "unzip.erase(unique(all(unzip)), unzip.end());",
+        "for(int i=0; i<unzip.size(); i++) zip[unzip[i]] = i;"
+    ],
+    "description": "compress"
+    },
+    "slide_min": {
+        "prefix": "slide_min",
+        "body": [
+            "// [i-k, i]の最小値を格納したvectorを返す",
+            "vector<int> slide_min(vector<int> &a, int k){",
+            "    deque<int> deq;",
+            "    vector<int> b;",
+            "    rep(i, a.size()){",
+            "        // maxはここの不等号の向きを変える",
+            "        while(!deq.empty() && a[deq.back()] >= a[i]) deq.pop_back();",
+            "        deq.push_back(i);",
+            "        b.push_back(a[deq.front()]);",
+            "        if(i-k+1 >= 0 && deq.front() == i-k+1) deq.pop_front();",
+            "    }",
+            "    return b;",
+            "}"
+        ],
+        "description": "slide_min"
+    }
+}
