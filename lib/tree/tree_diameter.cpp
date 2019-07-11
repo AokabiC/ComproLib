@@ -1,8 +1,7 @@
 struct edge{
-    int src, to, cost;
+    int to, cost;
 };
-using Edges = vector<edge>;
-using WeightedGraph = vector<Edges>;
+using WeightedGraph = vector<vector<edge>>;
 using pi = pair<int, int>;
 
 pi dfs(WeightedGraph &G, int idx, int src){

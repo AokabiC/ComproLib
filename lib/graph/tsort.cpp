@@ -1,9 +1,7 @@
-struct edge
-{
-  int src, to, cost;
+struct edge{
+    int to, cost;
 };
-using Edges = vector<edge>;
-using WeightedGraph = vector<Edges>;
+using WeightedGraph = vector<vector<edge>>;
 
 vector<int> tsort(WeightedGraph &G){
     vector<int> tsorted;

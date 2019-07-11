@@ -10,6 +10,7 @@ copy() {
 run() {
     echo "Compiling..."
     g++ -Wall -g -D_GLIBCXX_DEBUG -fsanitize=undefined -std=c++14 ./code.cpp
+    # g++ -std=c++14 ./code.cpp
     if [ $? -gt 0 ]; then
         echo -e "\e[31m[ERR]\e[m Compilation failed."
         return 1

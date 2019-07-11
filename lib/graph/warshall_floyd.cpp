@@ -1,4 +1,6 @@
-void warshall_floyd(vector<vector<int>> &G){
+using Graph = vector<vector<int>>;
+
+void warshall_floyd(Graph &G){
     int V = G.size();
     rep(k, V)rep(i, V)rep(j, V){
         if(G[i][k] == INF || G[k][j] == INF) continue;
