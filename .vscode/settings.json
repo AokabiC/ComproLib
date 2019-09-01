@@ -62,5 +62,6 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "cquery.cacheDirectory": "${workspaceFolder}/.vscode/cquery_cached_index/"
 }
