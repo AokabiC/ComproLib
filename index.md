@@ -92,3 +92,8 @@ layout: default
 * :warning: <a href="library/lib/tree/tree_diameter.cpp.html">lib/tree/tree_diameter.cpp</a>
 
 
+## Verify Files
+
+* :heavy_check_mark: <a href="verify/example.test.cpp.html">example.test.cpp</a>
+
+
