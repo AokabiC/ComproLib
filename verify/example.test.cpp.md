@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: example.test.cpp
+# :x: example.test.cpp
 
 <a href="../index.html">Back to top page</a>
 
 * <a href="{{ site.github.repository_url }}/blob/master/example.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-02 22:47:59+09:00
+    - Last commit date: 2020-03-02 22:52:39+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B</a>
@@ -61,7 +61,7 @@ int main() {
         int t_i; cin >> t_i;
         cnt += binary_search(ALL(s), t_i);
     }
-    cout << cnt << endl;
+    cout << cnt+1 << endl;
     return 0;
 }
 
@@ -92,7 +92,7 @@ int main() {
         int t_i; cin >> t_i;
         cnt += binary_search(ALL(s), t_i);
     }
-    cout << cnt << endl;
+    cout << cnt+1 << endl;
     return 0;
 }
 

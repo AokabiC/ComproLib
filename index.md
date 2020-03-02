@@ -94,6 +94,6 @@ layout: default
 
 ## Verify Files
 
-* :heavy_check_mark: <a href="verify/example.test.cpp.html">example.test.cpp</a>
+* :x: <a href="verify/example.test.cpp.html">example.test.cpp</a>
 
 
