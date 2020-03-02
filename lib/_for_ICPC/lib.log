@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.6.13)  12 JUL 2019 01:47
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.6.13)  16 NOV 2019 08:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,7 +138,7 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/jlisting.sty
+(/usr/local/share/texmf/tex/latex/jlisting/jlisting.sty
 Package: jlisting 2006/02/20 0.2 (Thor)
 \lst@nextchar=\count103
 \lst@inputfile=\read1
@@ -316,23 +316,24 @@ LaTeX Font Info:    Font shape `JY1/gt/m/it' in size <9> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 111.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 111.
- [2] [3] [4] [5] [6] [7] [8] [9] [10]
+ [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 609.
+(Font)              <7> on input line 809.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 609.
+(Font)              <5> on input line 809.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 609.
+(Font)              scaled to size 6.72699pt on input line 809.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 609.
- [11] (./lib.aux) ) 
+(Font)              scaled to size 4.805pt on input line 809.
+ [14] [15] [16]
+(./lib.aux) ) 
 Here is how much of TeX's memory you used:
- 3597 strings out of 493640
- 48760 string characters out of 6150528
- 186266 words of memory out of 5000000
- 7178 multiletter control sequences out of 15000+600000
+ 3746 strings out of 493640
+ 50289 string characters out of 6150528
+ 195266 words of memory out of 5000000
+ 7326 multiletter control sequences out of 15000+600000
  12464 words of font info for 60 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  33i,6n,58p,201b,1616s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on lib.dvi (11 pages, 87500 bytes).
+Output written on lib.dvi (16 pages, 129564 bytes).

@@ -5,17 +5,20 @@
 */
 template<typename Monoid>
 struct Segtree{
+  private:
     int n;
     vector<Monoid> dat;
     Monoid m0; // データの初期化値
+
+    Monoid merge(Monoid a, Monoid b){ return ; }    // 区間をマージする二項演算
+    void updateNode(int k, Monoid x){ dat[k] = ; }  // 区間を操作する二項演算
+
+  public:
     Segtree(int sz, Monoid m0) : m0(m0){
         n = 1;
         while(n < sz) n *= 2;
         dat.assign(2*n-1, m0);
     }
-
-    Monoid merge(Monoid a, Monoid b) // 区間をマージする二項演算
-    void updateNode(int k, Monoid x) // 区間を操作する二項演算
 
     void update(int k, Monoid x){
         k += n-1;

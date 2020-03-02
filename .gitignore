@@ -1,3 +1,4 @@
-/*.dSYM/
+*.dSYM/
+lib/_for_ICPC/
 code.cpp
 input

@@ -66,3 +66,12 @@ struct ModInt {
 
 const int mod = 1e9 + 7;
 using modint = ModInt<mod>;
+
+modint fact[200010];
+
+modint nCr(int n, int r){
+    return fact[n]/(fact[n-r]*fact[r]);
+}
+
+// 初期化
+// fact[0] = 1; rep(i, 200001) fact[i] = (fact[i-1] * i);

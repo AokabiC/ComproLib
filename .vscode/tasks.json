@@ -1,19 +1,13 @@
 {
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build (C++)",
+            "label": "Build (C++ / GCC 7.4.0)",
             "type": "shell",
-            "options": {
-                "shell": {
-                    "executable": "C:\\Windows\\System32\\wsl.exe",
-                }
-            },
             "command": "g++",
-            "args": [
-                "`wslpath",
-                "'${file}'`",
-            ],
+            "args": ["-Wall", "-g", "-fsanitize=undefined", "-std=c++14", "${file}"],
             "group": "build",
             "presentation": {
                 "reveal": "silent"
