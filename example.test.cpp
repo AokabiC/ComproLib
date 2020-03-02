@@ -18,6 +18,6 @@ int main() {
         int t_i; cin >> t_i;
         cnt += binary_search(ALL(s), t_i);
     }
-    cout << cnt << endl;
+    cout << cnt+1 << endl;
     return 0;
 }
