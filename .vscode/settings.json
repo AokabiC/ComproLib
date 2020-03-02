@@ -71,5 +71,10 @@
         "random": "cpp",
         "set": "cpp"
     },
-    "cquery.cacheDirectory": "${workspaceFolder}/.vscode/cquery_cached_index/"
+    "cquery.cacheDirectory": "${workspaceFolder}/.vscode/cquery_cached_index/",
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    }
 }
